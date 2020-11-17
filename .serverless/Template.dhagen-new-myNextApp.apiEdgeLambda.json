@@ -1,0 +1,17 @@
+{
+  "name": "c7isxfh-szqp9k",
+  "hash": "55KFOZXlOqcsmjwWhHkF2MJ2QAg0vgPr4UaEER0neNU=",
+  "description": "API Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "/Users/dhagen/Projects/next.js-authentication-aws/.serverless_nextjs/api-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs12.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::782559036331:role/c7isxfh-sq9b7nb"
+  },
+  "arn": "arn:aws:lambda:us-east-1:782559036331:function:c7isxfh-szqp9k",
+  "region": "us-east-1"
+}

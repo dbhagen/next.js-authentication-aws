@@ -1,10 +1,20 @@
-import { withSSRContext } from 'aws-amplify'
+import { withSSRContext, Auth } from 'aws-amplify'
 
 function Protected({ authenticated, username }) {
+  const doSignOut = () => {
+    Auth.signOut()
+      .then(data => console.log('Then Data:',data))
+      .catch(err => console.log('Catch Error:', err));
+  }
+
   if (!authenticated) {
     return <h1>Not authenticated</h1>
   }
-  return <h1>Hello {username} from SSR route!</h1>
+  return (
+    <div>
+      <h1>Hello {username} from SSR route!</h1>
+      <button onClick={doSignOut}>Sign Out</button>
+    </div>)
 }
 
 export async function getServerSideProps({ req, res }) {

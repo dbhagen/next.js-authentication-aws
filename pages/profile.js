@@ -12,8 +12,15 @@ function Profile() {
       })
       .catch(() => setUser(null))
   }, []);
+
+  const doSignOut = () => {
+    Auth.signOut()
+      .then(data => console.log('Then Data:',data))
+      .catch(err => console.log('Catch Error:', err));
+  }
   return (
     <div>
+      <button onClick={doSignOut}>Sign Out</button>
       { user && <h1>Welcome, {user.username}</h1> }
       <AmplifySignOut />
     </div>

@@ -1,0 +1,17 @@
+{
+  "name": "c7isxfh-1h5rda",
+  "hash": "G5Hbc1RWQd37MotDgkxBymcA11yCxbBDYPov0s1TwJc=",
+  "description": "Default Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "/Users/dhagen/Projects/next.js-authentication-aws/.serverless_nextjs/default-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs12.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::782559036331:role/c7isxfh-sa4a364"
+  },
+  "arn": "arn:aws:lambda:us-east-1:782559036331:function:c7isxfh-1h5rda",
+  "region": "us-east-1"
+}

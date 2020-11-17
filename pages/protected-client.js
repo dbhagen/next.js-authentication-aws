@@ -11,8 +11,19 @@ function ProtectedClient() {
       // if there is no authenticated user, redirect to profile page
       .catch(() => router.push('/profile'))
   }, []);
+  const doSignOut = () => {
+    Auth.signOut()
+      .then(data => console.log('Then Data:',data))
+      .catch(err => console.log('Catch Error:', err));
+  }
+
   if (!user) return null
-  return <h1>Hello {user.username} from client route!</h1>
+  return (
+    <div>
+      <h1>Hello {user.username} from client route!</h1>
+      <button onClick={doSignOut}>Sign Out</button>
+    </div>
+  )
 }
 
 export default ProtectedClient
