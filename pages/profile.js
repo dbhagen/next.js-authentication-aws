@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 import { Auth } from 'aws-amplify'
+import { useRouter } from 'next/router';
+
 
 function Profile() {
   const [user, setUser] = useState(null);
+  const router = useRouter();
   useEffect(() => {
     Auth.currentAuthenticatedUser()
       .then(user => {
@@ -15,7 +18,11 @@ function Profile() {
 
   const doSignOut = () => {
     Auth.signOut()
-      .then(data => console.log('Then Data:',data))
+      .then(data => {
+        setUser(null)
+        router.push('/')
+        console.log('Then Data:', data)
+      })
       .catch(err => console.log('Catch Error:', err));
   }
   return (

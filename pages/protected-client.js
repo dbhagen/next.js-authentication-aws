@@ -8,12 +8,16 @@ function ProtectedClient() {
   useEffect(() => {
     Auth.currentAuthenticatedUser()
       .then(user => setUser(user))
+      router.push('/')
       // if there is no authenticated user, redirect to profile page
       .catch(() => router.push('/profile'))
   }, []);
   const doSignOut = () => {
     Auth.signOut()
-      .then(data => console.log('Then Data:',data))
+      .then(data => {
+        setUser(null)
+        console.log('Then Data:', data)
+      })
       .catch(err => console.log('Catch Error:', err));
   }
 

@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import '../styles/globals.css';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { css } from 'emotion';
 
@@ -10,9 +12,15 @@ Amplify.configure({
 });
 
 export default function MyApp ({ Component, pageProps }) {
+  const [user, setUser] = useState(null);
+  const router = useRouter();
   const doSignOutNav = () => {
     Auth.signOut()
-      .then(data => console.log('Then Data:',data))
+      .then(data => {
+        setUser(null)
+        router.push('/')
+        console.log('Then Data:', data)
+      })
       .catch(err => console.log('Catch Error:', err));
   }
   return (

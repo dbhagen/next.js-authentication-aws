@@ -2,8 +2,8 @@
   "name": "c7isxfh-sa4a364",
   "arn": "arn:aws:iam::782559036331:role/c7isxfh-sa4a364",
   "service": [
-    "lambda.amazonaws.com",
-    "edgelambda.amazonaws.com"
+    "edgelambda.amazonaws.com",
+    "lambda.amazonaws.com"
   ],
   "policy": {
     "Version": "2012-10-17",
