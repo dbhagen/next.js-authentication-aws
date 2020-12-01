@@ -1,6 +1,6 @@
 {
   "auth": {
-    "nextauthenticationbc39c1bf": {
+    "nextjsauthenticationdab5c3d5dab5c3d5": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

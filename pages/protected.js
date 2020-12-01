@@ -17,7 +17,7 @@ function Protected({ authenticated, username }) {
     </div>)
 }
 
-export async function getServerSideProps({ req, res }) {
+export const getServerSideProps = async ({ req, res }) => {
   const { Auth } = withSSRContext({ req })
   try {
     const user = await Auth.currentAuthenticatedUser()
@@ -32,8 +32,8 @@ export async function getServerSideProps({ req, res }) {
     console.log('error, user not authenticated')
 
     // SSR redirect
-    res.writeHead(302, { Location: '/profile' });
-    res.end();
+    // res.writeHead(302, { Location: '/profile' });
+    // res.end();
     // non-SSR-redirect
     // return {
     //   props: {
@@ -41,7 +41,11 @@ export async function getServerSideProps({ req, res }) {
     //   }
     // }
   }
-  return {props: {}}
+  return {
+    props: {
+      authenticated: false
+    }
+  }
 }
 
 export default Protected

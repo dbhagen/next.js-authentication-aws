@@ -6,6 +6,8 @@ import { css } from 'emotion';
 
 import Amplify, { Auth } from 'aws-amplify';
 import config from '../src/aws-exports';
+// config.oauth.redirectSignIn = 'http://localhost:3000/'
+// config.oauth.redirectSignOut = 'http://localhost:3000/'
 Amplify.configure({
   ...config,
   ssr: true
@@ -37,6 +39,9 @@ export default function MyApp ({ Component, pageProps }) {
         </Link>
         <Link href="/protected-client">
           <span className={linkStyle}>Protected Client</span>
+        </Link>
+        <Link href="/test">
+          <span className={linkStyle}>Test Auth Return</span>
         </Link>
         <button onClick={doSignOutNav}>
           Sign Out
